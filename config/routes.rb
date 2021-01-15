@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'application#home'
+
   resources :genres
   resources :users, except: [:new] 
   resources :books

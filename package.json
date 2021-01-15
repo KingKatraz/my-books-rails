@@ -2,13 +2,22 @@
   "name": "my-books-rails",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.12.10",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "turbolinks": "^5.2.0"
+    "@rails/webpacker": "^6.0.0-pre.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "turbolinks": "^5.2.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.2"
   }
 }
