@@ -12,8 +12,11 @@ def create
         sessions[:user_id] = @user.id
         redirect_to user_path(@user) #Show page
     else
-        redirect_to signup_path
+        render :new
     end
 end 
+
+def destroy
+end
 
 end
