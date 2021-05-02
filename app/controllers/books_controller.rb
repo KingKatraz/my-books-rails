@@ -4,12 +4,19 @@ class BooksController < ApplicationController
     #READ
     
     def index
-    @books = Book.all
+        #binding.pry
+        # if params[:genre_id]
+        #     @genre = Genre.find_by(params[:genre])
+        #     @books = @genre.books
+        # else
+        #     @books = Book.all
+        # end
     end
 
     
     def show
-        @books = Book.find_by(id: params[:id])
+        #@books = Book.find_by(id: params[:id])
+        #@books = Book.find_by_id(params)
     end
 
     #CREATE
@@ -21,6 +28,11 @@ class BooksController < ApplicationController
     
     def create
         @book = Book.new(book_params)
+        if @donation.save 
+            redirect_to book_path(@book)
+        else
+            rende :new
+        end 
     end
 
     #UPDATE
@@ -43,7 +55,7 @@ class BooksController < ApplicationController
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-    @book = Book.find(params[:id])
+    @book = Book.find_by_id(params)
     end
 
     # Only allow a list of trusted parameters through.

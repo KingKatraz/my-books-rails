@@ -10,10 +10,16 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'sessions#destroy'
 
-  resources :genres
-  resources :users, except: [:new] 
-  resources :books
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
 
   
+  resources :users 
+  
+  # only nested routes: index new create
+  resources :genres do 
+      resources :books, shallow: true
+    end 
+
+  resources :books, only: [:index, :new, :create]
 
 end
