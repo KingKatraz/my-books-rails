@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
-    def home
-        redirect_to signup_path
-    end
+    include ApplicationHelper
+
+    def welcome
+        if !logged_in?
+            redirect_to login_path
+        end
+    end 
+
+
 end

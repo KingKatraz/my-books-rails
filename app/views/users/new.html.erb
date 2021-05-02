@@ -1,6 +1,16 @@
-<%= form_for @user do |f| %>
-    <%= f.text_field :email %>
-    <%= f.password_field :password %>
-    <%= f.submit "sign up" %>
+<h1> SIGN UP HERE</h1>
 
+<%= form_with model: @user do |f| %>
+    <ul>
+    <li><%= f.label :email %> 
+    <%= f.text_field :email %></li><br />
+    <li><%= f.label :password %> 
+    <%= f.password_field :password %></li><br />
+    <li><%= f.submit 'Sign Up' %></li>
+    </ul>
 <% end %>
+
+
+
+
+

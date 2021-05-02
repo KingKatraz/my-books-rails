@@ -1,4 +1,6 @@
-<%= form_for @user, :url => login_path do |f| %>
+<h1>Login Here</h1>
+
+<%= form_with url: login_path do |f| %>
     Email:
     <%= f.text_field :email %>
     Password:
@@ -6,3 +8,7 @@
     <%= f.submit "log in" %>
 
 <% end %>
+
+<h3>Login With Google</h3>
+
+<%= button_to 'Google Login', '/auth/google_oauth2' %>

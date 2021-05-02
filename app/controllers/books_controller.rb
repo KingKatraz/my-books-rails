@@ -9,6 +9,7 @@ class BooksController < ApplicationController
 
     
     def show
+        @books = Book.find_by(id: params[:id])
     end
 
     #CREATE

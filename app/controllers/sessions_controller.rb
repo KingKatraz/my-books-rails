@@ -1,22 +1,23 @@
 class SessionsController < ApplicationController
 
-def new
-    @user = User.new
+def new #Render login from 
 end
 
-def create 
-    @user = User.find_by(email: params[:user][:email])
+def create #Processing the login form 
+    user = User.find_by(email: params[:email])
 
-    if @user && @user.authenticate(password: params[:user][:password] )
+    if user && user.authenticate(params[:password])
         #logging in user
-        sessions[:user_id] = @user.id
-        redirect_to user_path(@user) #Show page
+        session[:user_id] = user.id
+        redirect_to root_path #Welcome Page
     else
         render :new
     end
 end 
 
-def destroy
+def destroy # Logout 
+    session.delete :user_id
+    redirect_to login_path
 end
 
 end
